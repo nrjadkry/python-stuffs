@@ -23,19 +23,27 @@ mylabel=Label(image=ImageList[imagecounter])
 mylabel.grid(row=0,column=0,columnspan=3)
 
 def forward():
+	global mylabel
 	global imagecounter 
-	print(len(ImageList))
-	print(imagecounter)
+	global btn3
+	if not imagecounter==(len(ImageList)-1):
+		mylabel.grid_forget()
+	# print(imagecounter)
 	if imagecounter < (len(ImageList)-1):
 		imagecounter += 1
 		mylabel=Label(image=ImageList[imagecounter])
 		mylabel.grid(row=0,column=0,columnspan=3)
-	else:
-		return
 
 
 def back():
 	global imagecounter 
+	global mylabel
+	
+	if not imagecounter==0:
+		mylabel.grid_forget()
+	# print(imagecounter)
+
+
 	if imagecounter!=0:
 		imagecounter -= 1
 		mylabel=Label(image=ImageList[imagecounter])
@@ -43,9 +51,12 @@ def back():
 
 
 
-btn1=Button(root,text="<<",command=back).grid(row=1,column=0)
+
+btn1=Button(root,text="<<",command=back)
 btn2=Button(root,text="Exit",fg="red",command=root.quit).grid(row=1,column=1)
 btn3=Button(root,text=">>",command=forward).grid(row=1,column=2)
+
+btn1.grid(row=1,column=0)
 
 
 root.mainloop()
