@@ -4,11 +4,11 @@ root=Tk()
 
 
 root.title('Calculator')
-# root.iconbitmap('/home/calculator.ico')
+# root.iconbitmap('@/home/calculator.ico')
 root.resizable(0,0)
 
-
-
+# p1 = PhotoImage(file = 'calculator.png')
+root.iconphoto(False, '@calculator.png') 
 
 mytextbox=Entry(root, borderwidth=5)
 mytextbox.grid(row=0,column=0,columnspan=4)
@@ -69,6 +69,19 @@ def equal():
 	mytextbox.delete(0,END)
 	mytextbox.insert(0,result)
 
+def back():
+	return
+# 	def split(word):
+# 		return [char for char in word] 
+    	
+# # Driver code 
+# 	word = mytextbox.get()
+# 	mytextbox.delete(0,END)
+# 	new_word=split(word)
+# 	print(new_word)
+# 	new_word.pop()
+# 	print(new_word)
+# 	mytextbox.insert(0,new_word)
 
 
 
@@ -96,7 +109,8 @@ btn16=Button(root,padx=15,pady=5, text="/",command=divide).grid(row=4,column=3)
 
 
 btn17=Button(root,padx=15,pady=5, text="C",command=btn_clear).grid(row=5,column=0,columnspan=2)
-btn18=Button(root,padx=15,pady=5, text="=",command=equal).grid(row=5,column=2,columnspan=2)
+btn18=Button(root,padx=15,pady=5, text="<<",command=back).grid(row=5,column=2)
+btn19=Button(root,padx=15,pady=5, text="=",command=equal).grid(row=5,column=3)
 # btn1=Button(root, text="",fg="blue",bg="yellow").grid(row=5,column=2,columnspan=2)
 
 
