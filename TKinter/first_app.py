@@ -1,5 +1,6 @@
 import tkinter
 from tkinter import *
+from PIL import ImageTk, Image
 
 root=Tk()
 
@@ -14,6 +15,11 @@ def hello():
 	hello=mytextbox.get()
 	print(hello)
 
+
+# Insert Image in TKinter app
+myimg=ImageTk.PhotoImage(Image.open("calculator.png"))
+mylabel3=Label(image=myimg)
+mylabel3.pack()
 
 
 
