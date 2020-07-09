@@ -181,7 +181,6 @@ def editRecord(id):
 	c=conn.cursor()
 	record_id=id
 	
-
 	c.execute(""" UPDATE addresses SET 
 		first_name = :f_name,
 		last_name  = :l_name,
